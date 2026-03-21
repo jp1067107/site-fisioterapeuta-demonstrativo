@@ -1,340 +1,435 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. [Nome] | Fisioterapia Regenerativa & Performance de Elite</title>
-    <meta name="description" content="Excelência em fisioterapia regenerativa e performance humana. Protocolos de elite baseados em ciência avançada.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
+    <title>Fisioterapia Avançada | Dr. [Nome do Fisioterapeuta]</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            deep: '#1A2F2B',     // Deep Sage (Luxury Background)
-                            primary: '#4A6B63',  // Main Teal
-                            accent: '#D4AF37',   // Soft Gold/Champagne
-                            surface: '#F9FBF9',  // Off-white surface
-                            muted: '#5F6368',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <style>
-        body { background-color: #F9FBF9; }
-        .hero-gradient {
-            background: radial-gradient(circle at 70% 30%, rgba(74, 107, 99, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 10% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
-                        #1A2F2B;
-        }
-        .editorial-line {
-            width: 3rem;
-            height: 1px;
-            background-color: rgba(212, 175, 55, 0.6);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .card-modern {
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .card-modern:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.08);
-        }
-        .gold-text {
-            background: linear-gradient(to right, #D4AF37, #F1E0B0, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .bg-gradient-soft { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
     </style>
 </head>
-<body class="antialiased text-brand-deep overflow-x-hidden selection:bg-brand-accent selection:text-white">
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
 
-    <!-- Header (Pattern Wilho) -->
-    <header id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
-            <div class="flex flex-col group cursor-pointer">
-                <span class="text-[12px] tracking-[0.4em] font-extrabold text-white uppercase group-hover:text-brand-accent transition-colors">Dra. [Nome]</span>
-                <div class="editorial-line mt-1 w-8 group-hover:w-full transition-all duration-500"></div>
-                <span class="text-[8px] tracking-[0.3em] text-white/50 uppercase font-medium mt-1 italic">Fisioterapia Regenerativa</span>
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="activity" class="text-blue-600"></i>
+                    <span class="font-bold text-xl tracking-tight">FISIO<span class="text-blue-600 font-extrabold">PRÓ</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                    <a href="#inicio" class="hover:text-blue-600 transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-blue-600 transition-colors">Sobre</a>
+                    <a href="#servicos" class="hover:text-blue-600 transition-colors">Serviços</a>
+                    <a href="#depoimentos" class="hover:text-blue-600 transition-colors">Depoimentos</a>
+                    <a href="#contato" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all font-semibold">Agendar Agora</a>
+                </div>
+                <div class="md:hidden">
+                    <i data-lucide="menu"></i>
+                </div>
             </div>
-            <nav class="hidden lg:flex space-x-12 text-[10px] font-bold tracking-[0.2em] text-white uppercase">
-                <a href="#inicio" class="hover:text-brand-accent transition-colors">Início</a>
-                <a href="#especialidades" class="hover:text-brand-accent transition-colors">Especialidades</a>
-                <a href="#metodo" class="hover:text-brand-accent transition-colors">O Método</a>
-                <a href="#sobre" class="hover:text-brand-accent transition-colors">Sobre</a>
-            </nav>
-            <a href="https://wa.me/5511999999999" target="_blank" class="bg-white/10 backdrop-blur-md text-white border border-white/20 text-[9px] font-bold tracking-[0.2em] uppercase px-8 py-4 rounded-full hover:bg-white hover:text-brand-deep transition-all duration-500">
-                Agendar Consulta
-            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="pt-32 pb-20 px-4 bg-gradient-soft">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">
+                    Fisioterapia de Elite em [Sua Cidade]
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Recupere sua <span class="text-blue-600">mobilidade</span> e volte ao que você ama.
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+                    Não deixe que a dor limite seus movimentos. Utilizamos protocolos de reabilitação avançados e personalizados para garantir que você recupere 100% da sua funcionalidade no menor tempo possível.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contato" class="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 group">
+                        <i data-lucide="calendar" class="group-hover:scale-110 transition-transform"></i> Agendar Avaliação
+                    </a>
+                    <a href="#servicos" class="flex items-center justify-center gap-2 border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all">
+                        Nossas Especialidades
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 pt-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://i.pravatar.cc/40?u=1" class="w-10 h-10 rounded-full border-2 border-white" alt="Paciente">
+                        <img src="https://i.pravatar.cc/40?u=2" class="w-10 h-10 rounded-full border-2 border-white" alt="Paciente">
+                        <img src="https://i.pravatar.cc/40?u=3" class="w-10 h-10 rounded-full border-2 border-white" alt="Paciente">
+                    </div>
+                    <p class="text-sm text-slate-500 font-medium">
+                        <span class="text-slate-900 font-bold">+500 pacientes</span> satisfeitos com resultados reais.
+                    </p>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -z-10 bg-blue-200/50 w-full h-full rounded-3xl blur-3xl transform rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                     alt="Fisioterapia Profissional" 
+                     class="rounded-3xl shadow-2xl object-cover w-full h-[500px]">
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section (Pattern Wilho) -->
-    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden hero-gradient">
-        <div class="container mx-auto px-6 lg:px-12 relative z-10 pt-20">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-10 reveal active">
-                    <div>
-                        <div class="editorial-line mb-8"></div>
-                        <span class="text-[10px] tracking-[0.4em] uppercase font-extrabold text-brand-accent block mb-6">
-                            RESTAURAÇÃO DE ALTA PERFORMANCE
+    <!-- Diferenciais -->
+    <section class="py-20 px-4 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-blue-100">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Atendimento Individual</h3>
+                <p class="text-slate-600 leading-relaxed">Cada sessão é dedicada exclusivamente a você. Sem interrupções, sem outros pacientes ao mesmo tempo.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-blue-100">
+                    <i data-lucide="award"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Tecnologia e Evidência</h3>
+                <p class="text-slate-600 leading-relaxed">Tratamentos baseados no que há de mais moderno na ciência, garantindo segurança e eficácia comprovada.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-blue-100">
+                    <i data-lucide="heart-pulse"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Recuperação Acelerada</h3>
+                <p class="text-slate-600 leading-relaxed">Foco em terapias ativas que permitem uma volta às atividades normais muito mais rápida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-24 px-4 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-100 rounded-full -z-10 blur-2xl"></div>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900">Expertise que faz a <span class="text-blue-600">diferença</span> na sua vida</h2>
+                <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
+                    <p>Com formação sólida e anos de prática clínica, o <strong>Dr. [Seu Nome]</strong> tornou-se referência em reabilitação osteomioarticular. Especialista em entender a biomecânica humana, seu foco é resolver a raiz do problema.</p>
+                    <p>Nossa clínica não é apenas um lugar de tratamento, mas um espaço de educação em saúde, onde você aprende a cuidar do seu próprio corpo e prevenir futuras lesões.</p>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <i data-lucide="check-circle" class="text-blue-600"></i> Especialista em Fisioterapia Desportiva
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <i data-lucide="check-circle" class="text-blue-600"></i> Mestre em Reabilitação Funcional
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <i data-lucide="check-circle" class="text-blue-600"></i> Formação Internacional em Terapia Manual
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-blue-600 rounded-3xl rotate-3 group-hover:rotate-0 transition-transform duration-500 opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71f153673f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Doutor em consulta" 
+                         class="relative rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-500 z-10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Como Funciona (Aumentando o tamanho do site) -->
+    <section class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Sua jornada para uma <span class="text-blue-600">vida sem limitações</span></h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto">Entenda como funciona o nosso método exclusivo focado em resultados rápidos e duradouros.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Linha conectora -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 -translate-y-1/2 z-0"></div>
+                
+                <div class="relative z-10 bg-white p-6 text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-200 font-bold text-xl group-hover:scale-110 transition-transform">1</div>
+                    <h3 class="font-bold text-xl mb-3">Avaliação Clínica</h3>
+                    <p class="text-slate-600 text-sm">Análise biomecânica profunda para identificar a real causa da sua dor, não apenas os sintomas.</p>
+                </div>
+                
+                <div class="relative z-10 bg-white p-6 text-center group text-slate-900">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-200 font-bold text-xl group-hover:scale-110 transition-transform">2</div>
+                    <h3 class="font-bold text-xl mb-3">Plano Estratégico</h3>
+                    <p class="text-slate-600 text-sm">Montamos um cronograma personalizado de sessões e exercícios específicos para o seu corpo.</p>
+                </div>
+                
+                <div class="relative z-10 bg-white p-6 text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-200 font-bold text-xl group-hover:scale-110 transition-transform">3</div>
+                    <h3 class="font-bold text-xl mb-3">Intervenção Ativa</h3>
+                    <p class="text-slate-600 text-sm">Aplicação de técnicas manuais e exercícios terapêuticos para restaurar sua função física.</p>
+                </div>
+                
+                <div class="relative z-10 bg-white p-6 text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-200 font-bold text-xl group-hover:scale-110 transition-transform">4</div>
+                    <h3 class="font-bold text-xl mb-3">Alta e Prevenção</h3>
+                    <p class="text-slate-600 text-sm">Você recebe orientações de manutenção para evitar recidivas e manter sua performance no topo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços/Especialidades -->
+    <section id="servicos" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Especialidades que <span class="text-blue-600">resolvem</span></h2>
+                <p class="text-slate-500 text-lg">Tratamentos especializados para diferentes necessidades, sempre com foco em resultados concretos.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:bg-blue-600 hover:-translate-y-2 transition-all duration-300 shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i data-lucide="stretchy-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-white transition-colors">Fisioterapia Desportiva</h3>
+                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Recuperação rápida de lesões esportivas para que você volte ao treino com segurança máxima.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:bg-blue-600 hover:-translate-y-2 transition-all duration-300 shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-white transition-colors">RPG & Postura</h3>
+                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Tratamento de escolioses, cifoses e dores posturais através da reeducação do movimento.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:bg-blue-600 hover:-translate-y-2 transition-all duration-300 shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-white transition-colors">Terapia Manual</h3>
+                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Liberação de pontos de tensão e manipulação articular para alívio imediato da dor crônica.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 hover:bg-blue-600 hover:-translate-y-2 transition-all duration-300 shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i data-lucide="bone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-white transition-colors">Pós-Operatório</h3>
+                    <p class="text-slate-600 group-hover:text-blue-50 transition-colors">Recuperação monitorada de cirurgias ortopédicas de joelho, ombro, coluna e quadril.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-24 px-4 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Histórias de <span class="text-blue-400">sucesso</span></h2>
+                    <p class="text-slate-400 text-lg">Veja o que dizem aqueles que confiaram sua recuperação em nossas mãos.</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors"><i data-lucide="arrow-left"></i></button>
+                    <button class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors"><i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-slate-800/40 p-10 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-colors">
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-8 italic">"Cheguei com uma lesão no joelho que me tirou do futebol por meses. O tratamento foi intenso e certeiro. Hoje estou melhor do que antes da lesão."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/100?u=a1" class="w-12 h-12 rounded-full ring-2 ring-blue-500" alt="Paciente">
+                        <div>
+                            <p class="font-bold text-white uppercase text-sm tracking-wider">Ricardo Silva</p>
+                            <p class="text-xs text-blue-400">Atleta de Futebol Amador</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-slate-800/40 p-10 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-colors text-slate-900">
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-8 italic">"Sofria com enxaquecas causadas por má postura. Através do RPG e da terapia manual, minha vida mudou. Não tomo remédios há meses."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/100?u=b2" class="w-12 h-12 rounded-full ring-2 ring-blue-500" alt="Paciente">
+                        <div>
+                            <p class="font-bold text-white uppercase text-sm tracking-wider text-slate-900">Mariana Lopes</p>
+                            <p class="text-xs text-blue-400">Designer Gráfica</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-slate-800/40 p-10 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-colors">
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-8 italic">"Excelente infraestrutura e o Dr. é extremamente didático. Senti confiança desde a primeira consulta. Recomendo de olhos fechados."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/100?u=c3" class="w-12 h-12 rounded-full ring-2 ring-blue-500" alt="Paciente">
+                        <div>
+                            <p class="font-bold text-white uppercase text-sm tracking-wider">Carlos Magno</p>
+                            <p class="text-xs text-blue-400">Engenheiro Civil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-4 bg-white">
+        <div class="max-w-3xl mx-auto text-slate-900">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16">Dúvidas Frequentes</h2>
+            <div class="space-y-4">
+                <details class="group border border-slate-200 rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden bg-slate-50 transition-all open:bg-white open:shadow-lg">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h3 class="font-bold text-lg">Qual o tempo médio de tratamento?</h3>
+                        <span class="ml-1.5 flex-shrink-0 p-1 text-slate-900 transition duration-300 group-open:-rotate-180">
+                            <i data-lucide="chevron-down"></i>
                         </span>
-                        <h1 class="text-[2.8rem] md:text-6xl lg:text-[5.5rem] font-sans font-extrabold leading-[0.9] tracking-tighter text-white">
-                            SUPERE A DOR.
-                            <br />
-                            <span class="gold-text italic font-serif">Restauramos</span>
-                            <br />
-                            A SUA LIBERDADE
-                        </h1>
-                    </div>
-                    <p class="text-base md:text-xl text-white/60 max-w-xl leading-relaxed">
-                        Protocolos de elite baseados em ciência avançada para quem exige o melhor do próprio corpo. Recupere sua performance máxima com atendimento individualizado.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-6 pt-4">
-                        <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white text-brand-deep px-10 py-5 rounded-full font-extrabold text-[10px] uppercase tracking-[0.2em] transition-all duration-500 hover:bg-brand-accent hover:text-white group">
-                            INICIAR TRATAMENTO
-                            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                        <a href="#especialidades" class="inline-flex items-center justify-center gap-2 border-2 border-white/20 text-white px-10 py-5 rounded-full font-extrabold text-[10px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-brand-accent hover:text-brand-accent uppercase">
-                            VER PROTOCOLOS
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-sm lg:max-w-md">
-                        <div class="absolute -inset-4 rounded-[2rem] bg-brand-accent/10 blur-3xl"></div>
-                        <div class="relative rounded-[2rem] overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1594824473367-c5969114e740?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Dra. [Nome]" class="w-full h-full object-cover object-top scale-110">
-                        </div>
-                        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-black/5">
-                            <span class="text-3xl font-extrabold text-brand-deep block leading-none">12+</span>
-                            <span class="text-[9px] font-bold text-brand-muted uppercase tracking-widest mt-2 block italic">Anos de Ciência</span>
-                        </div>
-                    </div>
-                </div>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600">Depende da gravidade e do tipo de lesão. Após a primeira avaliação, entregamos uma estimativa realista do número de sessões necessárias.</p>
+                </details>
+                <details class="group border border-slate-200 rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden bg-slate-50 transition-all open:bg-white open:shadow-lg">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h3 class="font-bold text-lg">Preciso levar exames de imagem?</h3>
+                        <span class="ml-1.5 flex-shrink-0 p-1 text-slate-900 transition duration-300 group-open:-rotate-180">
+                            <i data-lucide="chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600">Se você já tiver exames (Raio-X, Ressonância, Tomografia), leve-os na primeira consulta. Caso contrário, nossa avaliação clínica é soberana para iniciar o tratamento.</p>
+                </details>
+                <details class="group border border-slate-200 rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden bg-slate-50 transition-all open:bg-white open:shadow-lg">
+                    <summary class="flex items-center justify-between cursor-pointer">
+                        <h3 class="font-bold text-lg">Como funcionam os pagamentos?</h3>
+                        <span class="ml-1.5 flex-shrink-0 p-1 text-slate-900 transition duration-300 group-open:-rotate-180">
+                            <i data-lucide="chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600">Aceitamos cartões de crédito, débito, PIX e oferecemos pacotes com desconto para tratamentos de longa duração.</p>
+                </details>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-20 bg-brand-surface border-b border-black/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
-            <div class="reveal">
-                <h4 class="text-4xl font-extrabold text-brand-deep font-serif italic">2.5k+</h4>
-                <p class="text-[9px] font-bold text-brand-muted uppercase tracking-[0.3em]">Vidas Transformadas</p>
-            </div>
-            <div class="reveal">
-                <h4 class="text-4xl font-extrabold text-brand-deep font-serif italic">15+</h4>
-                <p class="text-[9px] font-bold text-brand-muted uppercase tracking-[0.3em]">Certificações Int.</p>
-            </div>
-            <div class="reveal">
-                <h4 class="text-4xl font-extrabold text-brand-deep font-serif italic">98%</h4>
-                <p class="text-[9px] font-bold text-brand-muted uppercase tracking-[0.3em]">Recuperação Total</p>
-            </div>
-            <div class="reveal">
-                <h4 class="text-4xl font-extrabold text-brand-deep font-serif italic">24h</h4>
-                <p class="text-[9px] font-bold text-brand-muted uppercase tracking-[0.3em]">Suporte ao Paciente</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialties Grid -->
-    <section id="especialidades" class="py-32 lg:py-48 bg-white relative">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full"></div>
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12 mb-24">
-                <div class="reveal">
-                    <div class="editorial-line mb-8 w-20"></div>
-                    <h2 class="text-4xl md:text-7xl font-sans font-extrabold tracking-tighter text-brand-deep uppercase leading-[0.9]">
-                        ÁREAS DE
-                        <br />
-                        <span class="gold-text italic normal-case tracking-normal">Dominância Clínica</span>
-                    </h2>
-                </div>
-                <p class="text-brand-muted text-lg max-w-sm leading-relaxed lg:text-right font-medium reveal">
-                    Foco absoluto em resultados onde a complexidade exige expertise superior e ciência de ponta.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cards (Pattern Wilho with Teal palette) -->
-                <div class="card-modern bg-[#FAFAF9] border border-black/5 rounded-[2.5rem] p-10 group cursor-default reveal">
-                    <div class="flex items-start justify-between mb-10">
-                        <div class="w-16 h-16 rounded-2xl border border-black/5 flex items-center justify-center group-hover:bg-brand-deep group-hover:text-white transition-all duration-500">
-                            <i data-lucide="activity" class="w-7 h-7 text-brand-primary group-hover:text-brand-accent transition-colors"></i>
+    <!-- Contato -->
+    <section id="contato" class="py-24 px-4 bg-blue-600">
+        <div class="max-w-7xl mx-auto bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row text-slate-900">
+            <div class="md:w-1/2 p-12 md:p-20 bg-blue-50">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-8">Vamos dar o primeiro <span class="text-blue-600">passo</span>?</h2>
+                <p class="text-slate-600 mb-10 text-lg">Nossa equipe responderá em até 1 hora para confirmar seu horário.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-5">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-blue-600">
+                            <i data-lucide="map-pin"></i>
                         </div>
-                        <span class="text-[10px] font-bold tracking-widest text-brand-muted/30 uppercase">Protocolo 01</span>
-                    </div>
-                    <h3 class="text-2xl font-extrabold text-brand-deep mb-4 tracking-tight uppercase">Coluna & Postura</h3>
-                    <p class="text-brand-muted leading-relaxed font-medium">Tratamento estratégico para hérnias, escolioses e dores crônicas com foco na raiz.</p>
-                    <div class="mt-8 pt-6 border-t border-black/5 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <span class="text-[9px] font-extrabold text-brand-primary uppercase tracking-[0.2em]">Saber Mais ➔</span>
-                    </div>
-                </div>
-
-                <div class="card-modern bg-[#FAFAF9] border border-black/5 rounded-[2.5rem] p-10 group cursor-default reveal">
-                    <div class="flex items-start justify-between mb-10">
-                        <div class="w-16 h-16 rounded-2xl border border-black/5 flex items-center justify-center group-hover:bg-brand-deep group-hover:text-white transition-all duration-500">
-                            <i data-lucide="dumbbell" class="w-7 h-7 text-brand-primary group-hover:text-brand-accent transition-colors"></i>
+                        <div>
+                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">Localização</p>
+                            <p class="text-slate-800 font-bold">Rua da Saúde, 500 - Sala 402, Centro</p>
                         </div>
-                        <span class="text-[10px] font-bold tracking-widest text-brand-muted/30 uppercase">Protocolo 02</span>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-brand-deep mb-4 tracking-tight uppercase">Performance Esportiva</h3>
-                    <p class="text-brand-muted leading-relaxed font-medium">Recuperação acelerada e blindagem contra lesões para atletas de alto rendimento.</p>
-                    <div class="mt-8 pt-6 border-t border-black/5 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <span class="text-[9px] font-extrabold text-brand-primary uppercase tracking-[0.2em]">Saber Mais ➔</span>
-                    </div>
-                </div>
-
-                <div class="card-modern bg-[#FAFAF9] border border-black/5 rounded-[2.5rem] p-10 group cursor-default reveal">
-                    <div class="flex items-start justify-between mb-10">
-                        <div class="w-16 h-16 rounded-2xl border border-black/5 flex items-center justify-center group-hover:bg-brand-deep group-hover:text-white transition-all duration-500">
-                            <i data-lucide="heart-pulse" class="w-7 h-7 text-brand-primary group-hover:text-brand-accent transition-colors"></i>
+                    <div class="flex items-center gap-5">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-blue-600">
+                            <i data-lucide="phone"></i>
                         </div>
-                        <span class="text-[10px] font-bold tracking-widest text-brand-muted/30 uppercase">Protocolo 03</span>
+                        <div>
+                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">WhatsApp</p>
+                            <p class="text-slate-800 font-bold">(11) 99887-6655</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-brand-deep mb-4 tracking-tight uppercase">Reabilitação Pós-OP</h3>
-                    <p class="text-brand-muted leading-relaxed font-medium">Acompanhamento minucioso para garantir o sucesso total da sua intervenção cirúrgica.</p>
-                    <div class="mt-8 pt-6 border-t border-black/5 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <span class="text-[9px] font-extrabold text-brand-primary uppercase tracking-[0.2em]">Saber Mais ➔</span>
+                    <div class="flex items-center gap-5">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-blue-600">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400 uppercase font-bold tracking-widest">E-mail</p>
+                            <p class="text-slate-800 font-bold">contato@fisiopro.com.br</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Method Section -->
-    <section id="metodo" class="py-32 lg:py-48 bg-brand-deep text-white overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-20 items-center">
-                <div class="lg:col-span-6 space-y-12 reveal">
+            <div class="md:w-1/2 p-12 md:p-20">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Nome</label>
+                            <input type="text" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">WhatsApp</label>
+                            <input type="tel" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
                     <div>
-                        <div class="editorial-line mb-8 w-20"></div>
-                        <h2 class="text-5xl md:text-7xl font-sans font-extrabold uppercase leading-[0.9] tracking-tighter">
-                            O MÉTODO
-                            <br />
-                            <span class="gold-text italic tracking-normal">Bespoke Care</span>
-                        </h2>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Qual seu objetivo principal?</label>
+                        <select class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all appearance-none">
+                            <option>Alívio de dor</option>
+                            <option>Reabilitação pós-cirúrgica</option>
+                            <option>Melhora de performance</option>
+                            <option>Correção de postura</option>
+                        </select>
                     </div>
-                    <div class="space-y-12">
-                        <div class="flex gap-8 group">
-                            <span class="text-3xl font-serif italic text-brand-accent opacity-40 group-hover:opacity-100 transition-opacity">01</span>
-                            <div>
-                                <h4 class="text-xl font-bold mb-3">Mapeamento Biomecânico</h4>
-                                <p class="text-white/50 leading-relaxed max-w-sm">Identificamos falhas de movimento antes que se tornem lesões permanentes.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-8 group">
-                            <span class="text-3xl font-serif italic text-brand-accent opacity-40 group-hover:opacity-100 transition-opacity">02</span>
-                            <div>
-                                <h4 class="text-xl font-bold mb-3">Intervenção Regenerativa</h4>
-                                <p class="text-white/50 leading-relaxed max-w-sm">Técnicas manuais aliadas a tecnologia para acelerar sua biologia.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-8 group">
-                            <span class="text-3xl font-serif italic text-brand-accent opacity-40 group-hover:opacity-100 transition-opacity">03</span>
-                            <div>
-                                <h4 class="text-xl font-bold mb-3">Performance & Alta</h4>
-                                <p class="text-white/50 leading-relaxed max-w-sm">Consolidação de resultados para uma vida sem reincidências de dor.</p>
-                            </div>
-                        </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Sua Mensagem</label>
+                        <textarea class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all h-32" placeholder="Descreva brevemente sua necessidade..."></textarea>
                     </div>
-                </div>
-                <div class="lg:col-span-6 relative reveal">
-                    <div class="absolute -inset-10 bg-brand-primary/20 blur-[100px] rounded-full"></div>
-                    <div class="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Tecnologia" class="w-full h-full object-cover">
-                    </div>
-                </div>
+                    <button class="w-full bg-blue-600 text-white py-5 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-3">
+                        Solicitar Agendamento <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-24 bg-brand-surface border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center space-y-12">
-            <div class="flex flex-col items-center">
-                <span class="text-[14px] tracking-[0.4em] font-extrabold text-brand-deep uppercase">Dra. [Nome]</span>
-                <span class="text-[8px] tracking-[0.3em] text-brand-muted uppercase font-medium mt-1">Ciência do Movimento</span>
-            </div>
-            <div class="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[8px] font-bold text-brand-muted/40 uppercase tracking-[0.3em]">
-                <span>&copy; 2026 Todos os direitos reservados.</span>
-                <div class="flex gap-8 text-brand-deep/40 text-sm">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <!-- Rodapé -->
+    <footer class="py-16 bg-white border-t border-slate-100 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="activity" class="text-blue-600"></i>
+                    <span class="font-bold text-2xl tracking-tighter">FISIO<span class="text-blue-600 font-extrabold">PRÓ</span></span>
                 </div>
-                <span>Design Elite Wilho Pattern</span>
+                <div class="flex gap-10 font-medium text-slate-500">
+                    <a href="#sobre" class="hover:text-blue-600 transition-colors">Sobre</a>
+                    <a href="#servicos" class="hover:text-blue-600 transition-colors">Serviços</a>
+                    <a href="#depoimentos" class="hover:text-blue-600 transition-colors">Pacientes</a>
+                    <a href="#contato" class="hover:text-blue-600 transition-colors">Agendar</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>© 2026 FisioPró. Dr. [Seu Nome] - CREFITO 123.456-F. Todos os direitos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:underline">Políticas de Privacidade</a>
+                    <a href="#" class="hover:underline">Termos de Uso</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Sticky -->
-    <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-10 right-10 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all z-50">
-        <i data-lucide="message-circle" class="w-8 h-8 fill-white"></i>
-    </a>
-
-    <!-- Scripts (Pattern Wilho) -->
     <script>
-        // Initialize Icons
         lucide.createIcons();
-
-        // Navbar Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-brand-deep/90', 'backdrop-blur-xl', 'py-4', 'shadow-2xl');
-                nav.classList.remove('py-6');
-            } else {
-                nav.classList.remove('bg-brand-deep/90', 'backdrop-blur-xl', 'py-4', 'shadow-2xl');
-                nav.classList.add('py-6');
-            }
-        });
-
-        // Reveal Animation
-        const reveal = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    el.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
     </script>
 </body>
 </html>
