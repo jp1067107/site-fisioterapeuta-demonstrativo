@@ -17,8 +17,8 @@ git branch -M main
 :: Adiciona o repositorio remoto (o 2>nul esconde o erro caso ja exista)
 git remote add origin https://github.com/jp1067107/site-fisioterapeuta-demonstrativo.git 2>nul
 
-:: Envia os arquivos para o GitHub
-git push -u origin main
+:: Envia os arquivos para o GitHub forçando a substituição (resolve o erro fetch first)
+git push -u origin main -f
 
 echo.
 echo Processo concluido! O site foi enviado para o GitHub.
